@@ -1,0 +1,12 @@
+.sigin-button .mantine-Button-inner{
+    justify-content: left;
+    align-items: left;
+}
+
+.sigin-button .mantine-Button-inner span {
+    width: 100%;
+}
+
+.mantine-Text-root {
+    color: white
+}
