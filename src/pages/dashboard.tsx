@@ -1,14 +1,19 @@
 import { Box, Flex, Text, Grid, UnstyledButton, Button } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconMinus, IconPlus } from "@tabler/icons-react";
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 const Dashboard = () => {
+    const isMobile = useMediaQuery(`(max-width: 440px)`);
+
     return (
         <Flex
             direction={'column'}
             gap={20}
         >
             <Flex
+                direction={isMobile?'column-reverse':'row'}
+                gap={10}
                 justify={'space-between'}
             >
                 <Text size={'1.5rem'} weight={700}>

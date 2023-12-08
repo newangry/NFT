@@ -28,7 +28,7 @@ const Layout: FC<Props> = ({ children }) => {
         const path = window.location.pathname;
         setPage(path.replace("/", ""));
     }, [router])
-
+    
     return (
         <Box>
             {
