@@ -14,9 +14,9 @@ import { Notifications } from "@mantine/notifications";
 import type { Database } from "@/types/types_db";
 import { supabaseClient } from "@/utils/app/supabase-client";
 import { SessionProvider } from "next-auth/react";
-import Web3 from 'web3'
-import { Web3ReactProvider } from '@web3-react/core'
+import Layout from "@/components/Layout/Index";
 export default function App({ Component, pageProps }: AppProps) {
+
   const [isClient, setIsClient] = useState(false);
   const contextValue = useCreateReducer<HomeInitialState>({
     initialState,
@@ -25,10 +25,6 @@ export default function App({ Component, pageProps }: AppProps) {
   const {
     state: { colorScheme },
   } = contextValue;
-
-  function getLibrary(provider: any) {
-    return new Web3(provider)
-  }
 
   useEffect(() => {
     setIsClient(true);
@@ -40,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
       chatInputPadding: "40px",
     },
   };
-
+  
   return (
     isClient && (
       <SessionContextProvider supabaseClient={supabaseClient}>
@@ -55,7 +51,9 @@ export default function App({ Component, pageProps }: AppProps) {
               toggleColorScheme={() => { }}
             >
               <MantineProvider theme={myTheme} withGlobalStyles withNormalizeCSS>
-                <Component {...pageProps} />
+                <Layout>
+                  <Component {...pageProps} />
+                </Layout>
                 <Notifications />
               </MantineProvider>
             </ColorSchemeProvider>

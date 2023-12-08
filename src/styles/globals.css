@@ -1,3 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
 .sigin-button .mantine-Button-inner{
     justify-content: left;
     align-items: left;
@@ -9,4 +12,16 @@
 
 .mantine-Text-root {
     color: white
+}
+
+body {
+    background-color: #002464 !important;
+}
+
+.mantine-Navbar-root {
+    background-color: #001438;
+    border: 2px solid #70d8f366;
+    border-radius: 5px;
+    top: 15px;
+    left: 15px;
 }

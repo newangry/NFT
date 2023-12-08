@@ -95,7 +95,10 @@ const Index = () => {
                             <Button 
                                 fullWidth 
                                 variant="gradient" 
-                                gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 80 }}
+                                style={{
+                                    background: 'linear-gradient(180deg,#f9f293 42.4%,#a17336 87.71%,#f9f293 94.48%)',
+                                    opacity:address?0.5:1
+                                }}
                                 size="lg"
                                 onClick={() => open()}
                                 className="sigin-button"
@@ -122,7 +125,7 @@ const Index = () => {
                             >
                                 {
                                     address?
-                                        "Connected to : "+address.slice(0,10)+'...'
+                                        "Connected to : "+address.slice(0, 8)+'...'+address.slice(-5, 4)
                                         :
                                         'Connect your BEP-20 wallet'
                                 }
@@ -149,7 +152,9 @@ const Index = () => {
                             <Button 
                                 fullWidth 
                                 variant="gradient" 
-                                gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }}
+                                style={{
+                                    background: 'linear-gradient(180deg,#f9f293 42.4%,#a17336 87.71%,#f9f293 94.48%)'
+                                }}
                                 size="lg"
                                 mt={20}
                                 className="sigin-button"
@@ -160,12 +165,15 @@ const Index = () => {
                             >
                                 <Flex w={'100%'} justify={'space-between'} align={'center'}>
                                     <Box>
+                                        <Text style={{color: 'black'}} weight={600}>
+
                                         {
                                             isRegist?'Register Now':'Login Now'
                                         }
+                                        </Text>
                                     </Box>
                                     <Box>
-                                        <IconLock />
+                                        <IconLock color="#333"/>
                                     </Box>
                                 </Flex>
                             </Button>
@@ -179,6 +187,9 @@ const Index = () => {
                                 color="green"
                                 size="lg"
                                 mt={10}
+                                style={{
+                                    background: 'linear-gradient(180deg,#f9f293 42.4%,#a17336 87.71%,#f9f293 94.48%)'
+                                }}
                                 className="sigin-button"
                                 disabled={address?false:true}
                                 onClick = {() => {
@@ -187,12 +198,14 @@ const Index = () => {
                             >
                                 <Flex w={'100%'} justify={'space-between'} align={'center'}>
                                     <Box>
+                                        <Text style={{color: 'black'}} weight={600}>
                                         {
                                             isRegist?'Login Now':'Register Now'
                                         }
+                                        </Text>
                                     </Box>
                                     <Box>
-                                        <IconLockOpen />
+                                        <IconLockOpen color="#333"/>
                                     </Box>
                                 </Flex>
                             </Button>
