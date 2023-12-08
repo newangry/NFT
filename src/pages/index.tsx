@@ -106,12 +106,15 @@ const Index = () => {
                             >
                                 <Flex w={'100%'} justify={'space-between'} align={'center'}>
                                     <Box>
+                                        <Text weight={600} style={{color: 'black'}}>
                                         {
                                             address?'Wallet Connected':'Connect Wallet'
                                         }
+                                        </Text>
+                                        
                                     </Box>
                                     <Box>
-                                        <IconClick />
+                                        <IconClick color="#333"/>
                                     </Box>
                                 </Flex>
                             </Button>
